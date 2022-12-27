@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class InkManager : MonoBehaviour
 {
 
+    public BackgroundManager backgroundManager;
+
     [SerializeField] private TextAsset _inkJsonAsset;
     [SerializeField] private TextMeshProUGUI _textField;
     [SerializeField] private VerticalLayoutGroup _choiceButtonContainer;
@@ -22,6 +24,7 @@ public class InkManager : MonoBehaviour
 
     void StartStory() {
         _story = new Story(_inkJsonAsset.text);
+        _story.BindExternalFunction("ChangeBackground", (string backgroundName) => backgroundManager.ChangeBackground(backgroundName));
         DisplayNextLine();
     }
 

@@ -7,16 +7,22 @@ VAR sawYourGrandma = false
 VAR helpedGrandma = false
 VAR playedWithKids = false
 
-// Scenes variables
+// Change background function
+EXTERNAL ChangeBackground(backgroundName)
 
+// Characters functions
+EXTERNAL ShowCharacter(characterName, position)
+
+EXTERNAL HideCharacter(characterName)
 
 -> Intro
 
-
 == Intro ==
+{ChangeBackground("Black")}
 Once upon a time...
 On Christmas eve...
 
+{ChangeBackground("JohnsRoom")}
 In a town called WinterPlains, there was a boy in his room, his name was John. 
 Dressed in his warm pajamas and bundled up with his winter blanket, he spent his time alone, playing or watching the same movies that were always broadcasted at this time of the year. Movies that made no sense in his opinion, where problems were solved because of the "magic" of Christmas, he didn't believe in that, he knew that life wasn't like that. 
 
@@ -33,6 +39,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
         -> TakeShower
 
 == BrushTeeth ==
+    {ChangeBackground("Bathroom")}
      John took the toothbrush, and unfortunately he looked at his reflection. 
      His hair was disheveled, he had dark circles under his eyes, and he didn't even have his pajamas on. Seeing his reflection brought a quick thought, he was wasting time in his room. He had had that thought before, so many times... he dismissed it as quickly as the other times. He was alone, his family didn't care about his social problems, but... what could he do?
 
@@ -40,11 +47,13 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> AfterTakeShower
 
 == TakeShower ==
+    {ChangeBackground("Bathroom")}
     John quickly went to take a hot shower, he wanted to feel clean as soon as possible. He would worry about his teeth later.
     -> AfterTakeShower
 
 
 == AfterTakeShower ==
+    {ChangeBackground("Kitchen")}
     He went downstairs to get something to eat, he didn't even know what time it was. Through the kitchen window, he could see the sun setting. He also saw his mother, who smiled a little smile at the sight of him, although there was some concern in her eyes.
     
     - Hello, sweetheart! Looks like you're finally out of the cave! I almost thought I'd have to get you out myself, so we could celebrate Christmas Eve together - John didn't like that comment very much, he wasn't locked up because he wanted to be.
@@ -83,6 +92,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
 
     He hated umbrellas, in WinterPlains it was very windy and that made it difficult for him to go with umbrellas. Luckily for him, the rain was not accompanied by an excessive wind, so he took his black umbrella and opened the door.
     
+    {ChangeBackground("Neighborhood")}
     The winter cold suddenly attacked him, getting into his clothes to freeze his skin, he should have wrapped up more. He resisted the cold and decided to continue on his way to the store, he did not like the idea of going back to search through his closet, full of messy or dirty clothes looking for something better than his sweatshirt.
     
     The neighborhood was decorated with Christmas lights arranged in each house, some with more picturesque forms such as Santa Claus entering through their chimneys, sleighs with reindeer... others were simpler, simply illuminating the facades. The children created snowmen or some took sleds to slide through the snow. They didn't seem to care about the rain, they laughed non-stop as their clothes were covered in snow and rain.
@@ -158,6 +168,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {helpedTheGirl: John were glad you gave her umbrella to the girl, she could not have made it to the meeting without her help.}
     {not helpedTheGirl and AskedTheGirl: A small feeling of guilt came over John, it seemed that the girl would not be able to make it to the meeting because of the rain. But someone else must have helped her, right?}
     
+    {ChangeBackground("OutsideShop")}
     John arrived at the store, as always at this time of year, there was a line to get in. As a counterpart to all the people lining up to buy gifts or food for the holidays, near the entrance were homeless people. They stood there these days, hoping that someone would feel compassionate enough to give them some money.
 
     He didn't look at the homeless and stood in line. John moved slowly, there seemed to be more people than he thought.
@@ -179,6 +190,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> InTheStore
     
 == InTheStore ==
+    {ChangeBackground("Shop")}
     John walked around the store, a supermarket divided into sections. There was food, video games, toys, books.... 
     He decided to go directly to buy the ingredients for his mother. As he walked through the store, crossing things off the list, he kept thinking about the homeless man.
     
@@ -204,6 +216,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> BackHome
     
 == BackHome ==
+    {ChangeBackground("Neighborhood")}
     Once the gifts and things on the list were paid for {helpedTheHomeless: (and after feeding the homeless man)}, he headed back home. On the way, a girl spoke to him.
 
     - Excuse me, do you want a match?
@@ -266,6 +279,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     - Hello darling! Come in, come in, I've made cookies, they're too many for me.
     
+    {ChangeBackground("GrandmotherHouse")}
     John entered her grandmother's house, it had been a while since he had visited her. But everything remained the same, he sat in the kitchen while she took out the cookies and asked him about school or her friends.
     
     John didn't like that subject, he had been missing classes lately. He hadn't managed to make friends either, he didn't consider himself interesting, and he thought he was bothering others, so he distanced himself from his classmates.
@@ -289,6 +303,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     His grandmother quickly went to get the things to decorate the tree, she seemed more cheerful now. She came back a few minutes later with a big box full of decorations.
     
+    {ChangeBackground("GrandmotherHouseDecorated")}
     They spent some time decorating the house, putting the Christmas balls on the tree, they also placed strings of lights around the tree that made the room sparkle. The whole house seemed much livelier now, and so did his grandmother. John was grateful that he had stayed to spend time with her. Sometimes he thought that he didn't spend enough time with his grandmother, someday she wouldn't be around, and he would regret not visiting her enough.  
 
     Once they finished, John said goodbye to his grandmother.
@@ -306,6 +321,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> AfterGrandma
 
 == AfterGrandma ==
+    {ChangeBackground("Neighborhood")}
     {sawYourGrandma: ->EncounterKids}
     {not sawYourGrandma: John didn't feel like going to see her, although he felt bad for not having thought of her in all this time. He sent her a message. - I'm sorry grandma, I have to deliver some things to mom. Merry Christmas, I promise I'll come see you the next day. I love you - John headed for home, it wouldn't be more than a few minutes. He spent the whole way thinking about his grandmother - I should have visited her... She's old and can hardly leave the house, I haven't seen her in too long - He thought. While the feeling of guilt grew, John arrived home.}
     -> ArriveHome
@@ -343,6 +359,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> ArriveHome
     
 == ArriveHome ==
+    {ChangeBackground("Kitchen")}
     John finally got home.
 
     {sawYourGrandma: - Thank goodness you're home, it took you so long, you know? It's almost time for dinner, tell me you brought what I asked for - Said his mother.}
@@ -352,6 +369,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {not sawYourGrandma: - Here you go, mom, I got everything on the list.}
     {not sawYourGrandma: - Thanks honey, put it there. There is still some time left until dinner - Said his mother.}
 
+    {ChangeBackground("LivingRoom")}
     John went to the living room, he wanted to rest a little before dinner and didn't want to go back to his room. His father was just arriving, he still didn't know where he had gone, maybe he bought some last minute gifts? Possibly John had inherited that from his father.
     
     A few minutes passed, and he heard a car noise, then someone opened the door. It was her father, unfortunately he didn't bring any gifts, perhaps he had left them in the car.
@@ -371,6 +389,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     - Well, dinner is done, so who's hungry? 
     
+    {ChangeBackground("Black")}
     They spent the whole dinner talking, it was strange for John. He hardly saw his parents and hadn't talked to them like this in a long time. John was telling about his way to the store, his meeting with the girl with the matches, the snowball kids...
     
     By the time he realized they had finished dinner, John was tired, so he wished his parents a good night and went upstairs to his room.
@@ -382,6 +401,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     -> GoodEnd
 
 == BadEnd ==
+    {ChangeBackground("JohnsRoom")}
     John lay down on the bed. He thought about the day, about the people who had asked for his help. He didn't help anyone, he didn't even go to his grandmother's house...
     
     Was John a bad person? Was he hiding behind his social anxiety, not to help anyone? Was he sabotaging himself?
@@ -395,6 +415,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
 -> END
 
 == GoodEnd ==
+    {ChangeBackground("JohnsRoom")}
     John lay down on the bed. He thought about the day, about the people who had asked for his help. 
     {helpedTheGirl: He had helped that girl, the one with the umbrella. She said she was going to an important meeting, was she...? No, it would be too much of a coincidence, but he was happy to have helped her, even though now he didn't have an umbrella.}
     {helpedTheHomeless: He gave food to the homeless man, who appreciated it much more than if he had given him a couple of coins. John was happy for that, but he was also thankful that he had helped the homeless man because for him, he bought the board game that he would spend time with his parents.}

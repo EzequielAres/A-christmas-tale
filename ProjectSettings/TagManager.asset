@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Black
+  - Bathroom
+  - GrandmotherHouse
+  - GrandmotherHouseDecorated
+  - JohnsRoom
+  - Kitchen
+  - LivingRoom
+  - Neighborhood
+  - OutsideShop
+  - Shop
   layers:
   - Default
   - TransparentFX
