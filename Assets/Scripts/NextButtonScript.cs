@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextButtonScript : MonoBehaviour
 {
+    private bool hasNextLine;
     private InkManager _inkManager;
 
     void Start() {
@@ -15,6 +17,7 @@ public class NextButtonScript : MonoBehaviour
     }
 
     public void OnClick() {
-        _inkManager?.DisplayNextLine();
+        if (_inkManager.CheckContinue()) _inkManager?.DisplayNextLine();
+        else SceneManager.LoadScene("EndGame");
     }
 }

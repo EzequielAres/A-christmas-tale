@@ -33,6 +33,11 @@ public class InkManager : MonoBehaviour
         DisplayNextLine();
     }
 
+    public bool CheckContinue() {
+        if (!_story.canContinue && _story.currentChoices.Count == 0) return false;
+        else return true;
+    }
+
     public void DisplayNextLine() {
         if (_story.canContinue) {
             string text = _story.Continue(); // gets next line
