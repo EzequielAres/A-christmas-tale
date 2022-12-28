@@ -45,12 +45,18 @@ public class Character : MonoBehaviour {
         });
     }
 
-    public void Hide() {
+    public void UpdatePosition(CharacterPosition position) {
+        Position = position;
+        Show();
+    }
 
+    public void Hide() {
+        transform.position = new Vector3(50, 0, 1);
+        /*
         LeanTween.moveX(gameObject, _offScreenX, _animationSpeed).setEase(LeanTweenType.linear).setOnComplete(() =>
         {
             IsShowing = false;
-        });
+        });*/
     }
 
     private void SetAnimationValues() {

@@ -42,7 +42,8 @@ public class CharacterManager : MonoBehaviour
             _characters.Add(character);
         }
         else if (character.IsShowing) {
-            Debug.LogWarning($"Failed to show character {name}. Character already showing");
+            character.GetComponent<Character>().UpdatePosition(position);
+            
             return;
         }
 

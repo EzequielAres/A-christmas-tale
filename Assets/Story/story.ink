@@ -87,15 +87,17 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     - She's right... I didn't even know it was Christmas Eve... I have something saved up, I should buy something - John thought - Okay, tell me what you need.
     
     She took out a note she had already prepared and gave it to John with the money. - Thanks sweetie, at least at dinner we can spend some time together...
+    
     -> RoadToShop
 
-
 == RoadToShop ==
+    {HideCharacter("Mother")}
     John went to the entrance of his house, through the window he saw that it was raining, he would have to go with an umbrella
 
     He hated umbrellas, in WinterPlains it was very windy and that made it difficult for him to go with umbrellas. Luckily for him, the rain was not accompanied by an excessive wind, so he took his black umbrella and opened the door.
     
     {ChangeBackground("Neighborhood")}
+    {ShowCharacter("John", "Center")}
     The winter cold suddenly attacked him, getting into his clothes to freeze his skin, he should have wrapped up more. He resisted the cold and decided to continue on his way to the store, he did not like the idea of going back to search through his closet, full of messy or dirty clothes looking for something better than his sweatshirt.
     
     The neighborhood was decorated with Christmas lights arranged in each house, some with more picturesque forms such as Santa Claus entering through their chimneys, sleighs with reindeer... others were simpler, simply illuminating the facades. The children created snowmen or some took sleds to slide through the snow. They didn't seem to care about the rain, they laughed non-stop as their clothes were covered in snow and rain.
@@ -124,6 +126,8 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     A feeling of curiosity emerges from John, the girl seemed concerned, and it didn't hurt to ask. 
 
     John approached the girl, who looked back at him as he approached.
+    {ShowCharacter("John", "Left")}
+    {ShowCharacter("WorriedGirl", "Right")}
     
     - Hello, is something wrong? - asked John.
     
@@ -167,6 +171,7 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
 
 
 == TowardsTheStore ==
+    {HideCharacter("WorriedGirl")}
     John walked for a few minutes until he reached the store, it seemed that it would not stop raining.
     {helpedTheGirl: John were glad you gave her umbrella to the girl, she could not have made it to the meeting without her help.}
     {not helpedTheGirl and AskedTheGirl: A small feeling of guilt came over John, it seemed that the girl would not be able to make it to the meeting because of the rain. But someone else must have helped her, right?}
@@ -174,8 +179,10 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {ChangeBackground("OutsideShop")}
     John arrived at the store, as always at this time of year, there was a line to get in. As a counterpart to all the people lining up to buy gifts or food for the holidays, near the entrance were homeless people. They stood there these days, hoping that someone would feel compassionate enough to give them some money.
 
+    {ShowCharacter("John", "Right")}
     He didn't look at the homeless and stood in line. John moved slowly, there seemed to be more people than he thought.
     
+    {ShowCharacter("Homeless", "Left")}
     The minutes passed, advancing little by little. After waiting a while John almost reached the entrance, next to him sat a homeless person. He was not very warm, he must have been freezing. He was a gray-haired man, quite thin, a reflection of not eating for days, he looked tired.
     
     Suddenly the man looked at him, his eyes expressing nothing but weariness.
@@ -188,12 +195,14 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     The man kept looking him in the eye, he knew it was a lie. He looked down and wrapped his arms around himself, trying to protect himself from the cold. To the homeless man, John was just one more, one of many who ignored him or lied just to avoid giving him some money.
     
+    {HideCharacter("Homeless")}
     John entered the store, his mind focused on the homeless man. Feeling guilty for having lied to him. He did have money, but he had just enough for his mother's shopping and to buy Christmas presents. 
     
     -> InTheStore
     
 == InTheStore ==
     {ChangeBackground("Shop")}
+    {ShowCharacter("John", "Center")}
     John walked around the store, a supermarket divided into sections. There was food, video games, toys, books.... 
     He decided to go directly to buy the ingredients for his mother. As he walked through the store, crossing things off the list, he kept thinking about the homeless man.
     
@@ -221,6 +230,8 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
 == BackHome ==
     {ChangeBackground("Neighborhood")}
     Once the gifts and things on the list were paid for {helpedTheHomeless: (and after feeding the homeless man)}, he headed back home. On the way, a girl spoke to him.
+    {ShowCharacter("John", "Left")}
+    {ShowCharacter("MatchGirl", "Right")}
 
     - Excuse me, do you want a match?
     
@@ -262,6 +273,8 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
 
 == GrandmaCalls ==
+    {HideCharacter("MatchGirl")}
+    {ShowCharacter("John", "Center")}
     On the way home, John's phone vibrated, he reached into his pocket and took out the phone. It was a message from his grandmother, he said "Merry Christmas darling! You could come see your grandmother on these dates... I haven't seen you in a long time"
 
     True, John hadn't even thought about her... Suddenly he felt terrible about himself for having locked himself away for so long, disconnected from everything else.
@@ -280,6 +293,8 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     He walked for a few minutes until he finally arrived at his grandmother's house. John knocked on the door and his grandmother took a few minutes to open. She walked slowly and had a hard time getting up, like anyone his age. When the door opened, her grandmother looked at him, and he could see how happy she was to have visited her.
     
+    {ShowCharacter("John", "Left")}
+    {ShowCharacter("Grandma", "Right")}
     - Hello darling! Come in, come in, I've made cookies, they're too many for me.
     
     {ChangeBackground("GrandmotherHouse")}
@@ -319,11 +334,13 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     - Merry Christmas sweetie - His grandmother hugged him then put something in her pocket - Thank you for visiting me.
     
+    {ShowCharacter("John", "Center")}
     John said goodbye and left his grandmother's house, he put his hand in his pocket and, as he expected, his grandmother had given him 10 dollars. She always gave him 10 dollars when he visited her, as a child it seemed like a fortune to John, and now he appreciated the gesture more than the money.
     
     -> AfterGrandma
 
 == AfterGrandma ==
+    {HideCharacter("Grandma")}
     {ChangeBackground("Neighborhood")}
     {sawYourGrandma: ->EncounterKids}
     {not sawYourGrandma: John didn't feel like going to see her, although he felt bad for not having thought of her in all this time. He sent her a message. - I'm sorry grandma, I have to deliver some things to mom. Merry Christmas, I promise I'll come see you the next day. I love you - John headed for home, it wouldn't be more than a few minutes. He spent the whole way thinking about his grandmother - I should have visited her... She's old and can hardly leave the house, I haven't seen her in too long - He thought. While the feeling of guilt grew, John arrived home.}
@@ -365,6 +382,9 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {ChangeBackground("Kitchen")}
     John finally got home.
 
+    {ShowCharacter("John", "Left")}
+    {ShowCharacter("Mother", "Right")}
+
     {sawYourGrandma: - Thank goodness you're home, it took you so long, you know? It's almost time for dinner, tell me you brought what I asked for - Said his mother.}
     {sawYourGrandma: - Sorry mom, I brought your stuff. I was late because I went to see grandma.}
     {sawYourGrandma: - Really? That's great, I'm sure he was very happy to see you. Thanks for bringing everything}
@@ -372,10 +392,14 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {not sawYourGrandma: - Here you go, mom, I got everything on the list.}
     {not sawYourGrandma: - Thanks honey, put it there. There is still some time left until dinner - Said his mother.}
 
+    {HideCharacter("Mother")}
+
     {ChangeBackground("LivingRoom")}
+    {ShowCharacter("John", "Center")}
     John went to the living room, he wanted to rest a little before dinner and didn't want to go back to his room. His father was just arriving, he still didn't know where he had gone, maybe he bought some last minute gifts? Possibly John had inherited that from his father.
     
     A few minutes passed, and he heard a car noise, then someone opened the door. It was her father, unfortunately he didn't bring any gifts, perhaps he had left them in the car.
+    {ShowCharacter("Father", "Left")}
 
     - Hey champ! - His father greeted him cheerfully
     
@@ -385,13 +409,17 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     
     {helpedTheGirl: but I have a very good news - His father seemed happy. }
     {helpedTheGirl:- What is it about? - Said John, his father called John's mother, gathering them in the living room.}
-    {helpedTheGirl: I got a call from work, it looks like they won't need to transfer me.}
+    {helpedTheGirl: {ShowCharacter("Mother", "Right")} I got a call from work, it looks like they won't need to transfer me.}
     {helpedTheGirl: Are you for real, honey? That's great! But why? - said John's mother, liking the idea of staying.}
     {helpedTheGirl: It seems that a girl is going to replace the transfer, she had a meeting today with my bosses, and she was very interested. They called me to ask if I wanted the transfer, but I decided it was best for us to stay here - said John's father, happy about that.}
     {helpedTheGirl: John's mother hugged her husband, happy about the decision to stay. They opened the embrace, looking for John to join them, he hugged them and even though he didn't mind moving he was also happy for the news, he knew it was important for his mother.}
-    
+    {not helpedTheGirl:{ShowCharacter("Mother", "Right")}}
     - Well, dinner is done, so who's hungry? 
     
+    {HideCharacter("Mother")}
+    {HideCharacter("Father")}
+    {HideCharacter("John")}
+
     {ChangeBackground("Black")}
     They spent the whole dinner talking, it was strange for John. He hardly saw his parents and hadn't talked to them like this in a long time. John was telling about his way to the store, his meeting with the girl with the matches, the snowball kids...
     
