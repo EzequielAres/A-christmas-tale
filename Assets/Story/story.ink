@@ -56,6 +56,9 @@ He grabbed some clothes and went straight to the bathroom without greeting anyon
     {ChangeBackground("Kitchen")}
     He went downstairs to get something to eat, he didn't even know what time it was. Through the kitchen window, he could see the sun setting. He also saw his mother, who smiled a little smile at the sight of him, although there was some concern in her eyes.
     
+    {ShowCharacter("John", "Left")}
+    {ShowCharacter("Mother", "Right")}
+    
     - Hello, sweetheart! Looks like you're finally out of the cave! I almost thought I'd have to get you out myself, so we could celebrate Christmas Eve together - John didn't like that comment very much, he wasn't locked up because he wanted to be.
     
     - Hi, looks like it's late.

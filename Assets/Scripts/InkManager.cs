@@ -11,6 +11,8 @@ public class InkManager : MonoBehaviour
 
     public BackgroundManager backgroundManager;
 
+    private CharacterManager _characterManager;
+
     [SerializeField] private TextAsset _inkJsonAsset;
     [SerializeField] private TextMeshProUGUI _textField;
     [SerializeField] private VerticalLayoutGroup _choiceButtonContainer;
@@ -19,12 +21,15 @@ public class InkManager : MonoBehaviour
     private Story _story;
 
     void Start() {
+        _characterManager = FindObjectOfType<CharacterManager>();
         StartStory();
     }
 
     void StartStory() {
         _story = new Story(_inkJsonAsset.text);
         _story.BindExternalFunction("ChangeBackground", (string backgroundName) => backgroundManager.ChangeBackground(backgroundName));
+        _story.BindExternalFunction("ShowCharacter", (string name, string position) => _characterManager.ShowCharacter(name, position));
+        _story.BindExternalFunction("HideCharacter", (string name) => _characterManager.HideCharacter(name));
         DisplayNextLine();
     }
 
